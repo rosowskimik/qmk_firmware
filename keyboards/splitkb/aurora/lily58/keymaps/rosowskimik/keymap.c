@@ -12,7 +12,7 @@
 #define MT_SPC LSFT_T(KC_SPC)
 
 #define LT1_ESC LT(1, KC_ESC)
-#define LT2_DEL LT(2, KC_DEL)
+#define LT2_BSPC LT(2, KC_BSPC)
 
 enum layers {
     BASE,
@@ -28,20 +28,20 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_TAB,   KC_Q,     KC_W,     KC_E,     KC_R,     KC_T,     /*          |          */  KC_Y,     KC_U,     KC_I,     KC_O,     KC_P,     KC_MINS,
         OS_LCTL,  KC_A,     KC_S,     KC_D,     KC_F,     KC_G,     /*          |          */  KC_H,     KC_J,     KC_K,     KC_L,     KC_SCLN,  KC_QUOT,
         OS_LSFT,  KC_Z,     KC_X,     KC_C,     KC_V,     KC_B,     KC_LBRC,  /*|*/  KC_RBRC,  KC_N,     KC_M,     KC_COMM,  KC_DOT,   KC_SLSH,  OS_RSFT,
-        /*                        */  OS_LALT,  KC_LGUI,  LT1_ESC,  MT_SPC,   /*|*/  KC_ENT,   LT2_DEL,  KC_BSPC,  OS_RALT
+        /*                        */  OS_LALT,  KC_LGUI,  LT1_ESC,  MT_SPC,   /*|*/  KC_ENT,   LT2_BSPC, KC_DEL,   OS_RALT
     ),
     [HIGHER] = LAYOUT(
         _______,  _______,  _______,  _______,  _______,  _______,  /*          |          */  _______,  _______,  _______,  _______,  _______,  _______,
         _______,  KC_1,     KC_2,     KC_3,     KC_4,     KC_5,     /*          |          */  KC_6,     KC_7,     KC_8,     KC_9,     KC_0,     _______,
-        _______,  KC_GRV ,  KC_MINS,  KC_PLUS,  KC_PAST,  KC_EQL,   /*          |          */  KC_LEFT,  KC_DOWN,  KC_UP,    KC_RGHT,  KC_AT,    _______,
-        _______,  KC_HASH,  KC_EXLM,  KC_QUES,  KC_UNDS,  KC_DQT,   KC_SLSH,  /*|*/  KC_BSLS,  KC_QUOT,  KC_GRV,   KC_PIPE,  KC_AMPR,  KC_PERC,  _______,
+        _______,  KC_AT,    KC_MINS,  KC_PLUS,  KC_EQL,   KC_PAST,  /*          |          */  KC_LEFT,  KC_DOWN,  KC_UP,    KC_RGHT,  KC_COLN,  _______,
+        _______,  KC_PIPE,  KC_AMPR,  KC_QUOT,  KC_DQT,   KC_SLSH,  KC_GRV,   /*|*/  _______,  KC_BSLS,  KC_UNDS,  KC_EXLM,  KC_QUES,  KC_HASH,  _______,
                                       _______,  _______,  MO(3),    KC_LCTL,  /*|*/  _______,  _______,  _______,  _______
     ),
     [LOWER] = LAYOUT(
         _______,  _______,  _______,  _______,  _______,  _______,  /*          |          */  _______,  _______,  _______,  _______,  _______,  _______,
         KC_F1,    KC_F2,    KC_F3,    KC_F4,    KC_F5,    KC_F6,    /*          |          */  KC_F7,    KC_F8,    KC_F9,    KC_F10,   KC_F11,   KC_F12,
-        _______,  KC_HOME,  KC_TAB,   QK_AREP,  KC_LPRN,  KC_LCBR,  /*          |          */  KC_RCBR,  KC_RPRN,  QK_AREP,  KC_BSPC,  KC_PGUP,  _______,
-        _______,  KC_END,   KC_CAPS,  QK_REP,   KC_LT,    KC_LBRC,  KC_LALT,  /*|*/  KC_RCTL,  KC_RBRC,  KC_GT,    QK_REP,   KC_PSCR,  KC_PGDN,  _______,
+        _______,  KC_HOME,  KC_TAB,   KC_LCBR,  KC_RCBR,  QK_AREP,  /*          |          */  QK_AREP,  KC_LPRN,  KC_RPRN,  KC_BSPC,  KC_PGUP,  _______,
+        OS_LALT,  KC_END,   _______,  KC_LBRC,  KC_RBRC,  QK_REP,   _______,  /*|*/  _______,  QK_REP,   KC_LT,    KC_GT,    _______,  KC_PGDN,  _______,
                                       _______,  _______,  _______,  _______,  /*|*/  KC_RALT,  MO(3),    _______,  _______
     ),
     [ADJUST] = LAYOUT(
