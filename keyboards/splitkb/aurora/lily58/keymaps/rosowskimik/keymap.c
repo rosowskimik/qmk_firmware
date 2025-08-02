@@ -50,6 +50,12 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     // clang-format
 };
 
+void keyboard_pre_init_user(void) {
+    // Disable power led
+    gpio_set_pin_output(24);
+    gpio_write_pin_high(24);
+}
+
 uint16_t get_alt_repeat_key_keycode_user(uint16_t keycode, uint8_t mods) {
     switch (keycode) {
         case KC_LPRN: return KC_RPRN;
