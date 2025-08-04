@@ -2,6 +2,9 @@
 CONVERT_TO = liatris
 
 # Features
+MOUSEKEY_ENABLE = no
+RGB_MATRIX_ENABLE = no
+
 AUTO_SHIFT_ENABLE = yes
 CAPS_WORD_ENABLE = yes
 REPEAT_KEY_ENABLE = yes
