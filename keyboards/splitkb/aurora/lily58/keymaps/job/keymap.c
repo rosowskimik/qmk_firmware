@@ -7,6 +7,8 @@
 // Modifiers
 #define SG_S LSG(KC_S)
 #define LG_PSCR LGUI(KC_PSCR)
+#define LC_SPC LCTL(KC_SPC)
+#define LA_UP LALT(KC_UP)
 
 #define CA_F1 LCA(KC_F1)
 #define CA_F2 LCA(KC_F2)
@@ -60,7 +62,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [ADJUST] = LAYOUT(
         XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  /*          |          */  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,
         CA_F1,    CA_F2,    LG_PSCR,  XXXXXXX,  XXXXXXX,  XXXXXXX,  /*          |          */  XXXXXXX,  XXXXXXX,  XXXXXXX,  KC_PSCR,  CA_F11,   CA_F12,
-        XXXXXXX,  XXXXXXX,  SG_S,     BS_TOGG,  KC_LARR,  XXXXXXX,  /*          |          */  KC_HPTH,  KC_RARR,  RM_TOGG,  RM_HUEU,  RM_SATU,  RM_VALU,
+        XXXXXXX,  XXXXXXX,  SG_S,     LC_SPC,   KC_LARR,  XXXXXXX,  /*          |          */  KC_HPTH,  KC_RARR,  LA_UP,    RM_HUEU,  RM_SATU,  RM_VALU,
         XXXXXXX,  XXXXXXX,  XXXXXXX,  KC_CPTH,  XXXXXXX,  XXXXXXX,  XXXXXXX,  /*|*/  XXXXXXX,  XXXXXXX,  KC_DQUO,  RM_NEXT,  RM_HUED,  RM_SATD,  RM_VALD,
                                       _______,  _______,  _______,  _______,  /*|*/  _______,  _______,  _______,  _______
     ),
