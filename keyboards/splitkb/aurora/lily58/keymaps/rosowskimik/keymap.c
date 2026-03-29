@@ -26,6 +26,7 @@ enum custom_keycodes {
     KC_RARR,
     KC_HPTH,
     KC_CPTH,
+    KC_VIMS,
 };
 
 enum layers {
@@ -61,7 +62,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [ADJUST] = LAYOUT(
         XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  /*          |          */  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,
         CA_F1,    CA_F2,    LG_PSCR,  XXXXXXX,  XXXXXXX,  XXXXXXX,  /*          |          */  XXXXXXX,  XXXXXXX,  XXXXXXX,  KC_PSCR,  CA_F11,   CA_F12,
-        XXXXXXX,  XXXXXXX,  SG_S,     LC_SPC,   KC_LARR,  XXXXXXX,  /*          |          */  KC_HPTH,  KC_RARR,  LA_UP,    RM_HUEU,  RM_SATU,  RM_VALU,
+        XXXXXXX,  KC_VIMS,  SG_S,     LC_SPC,   KC_LARR,  XXXXXXX,  /*          |          */  KC_HPTH,  KC_RARR,  LA_UP,    RM_HUEU,  RM_SATU,  RM_VALU,
         XXXXXXX,  XXXXXXX,  XXXXXXX,  KC_CPTH,  XXXXXXX,  XXXXXXX,  XXXXXXX,  /*|*/  XXXXXXX,  XXXXXXX,  KC_DQUO,  RM_NEXT,  RM_HUED,  RM_SATD,  RM_VALD,
                                       _______,  _______,  _______,  _______,  /*|*/  _______,  _______,  _______,  _______
     ),
@@ -109,6 +110,11 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         case KC_CPTH:
             if (record->event.pressed) {
                 SEND_STRING("./");
+            }
+            break;
+        case KC_VIMS:
+            if (record->event.pressed) {
+                SEND_STRING(SS_TAP(X_ESC) SS_TAP(X_SPC) SS_DELAY(50) "fs");
             }
             break;
     }
