@@ -17,3 +17,9 @@
 
 #define TAPPING_TERM 170
 #define PERMISSIVE_HOLD
+
+// Workaround for broken left column - remap to one of free pins
+// Value from `platforms/chibios/converters/elite_c_to_rp2040_ce/_pin_defs.h`
+#define B7 12U
+#undef MATRIX_COL_PINS
+#define MATRIX_COL_PINS {B7, F7, B1, B3, B2, B6}
